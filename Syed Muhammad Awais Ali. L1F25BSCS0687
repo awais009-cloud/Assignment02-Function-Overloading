@@ -9,7 +9,8 @@ int main() {
     cout << "Bill 2: " << mobileBill(100, 50) << endl;
     cout << "Bill 3: " << mobileBill(100, 50, 2.5) << endl;
     printLine('*', 10);
-    cout << "Bill 4: " << mobileBill(60, 0, 1.5) << endl;
+    cout << "Bill 4: " << mobileBill(60, 0, 1.5) << endl;//it's default value is already 0
+//Actually the second argument must b zero 0 to represent no sms
     printLine('=');
     return 0;
 }
@@ -23,3 +24,5 @@ void printLine(char ch, int n) {
         cout << ch;
     cout << endl;
 }
+// It gives a compilation error if the middle argument is omitted because
+// default arguments cannot be skipped when supplying a later argument. 
