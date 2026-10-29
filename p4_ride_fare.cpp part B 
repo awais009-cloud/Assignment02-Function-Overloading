@@ -1,0 +1,47 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int rides;
+    char vehicle;
+    double km;
+    int promo;
+    double total = 0;
+
+    ofstream fout("rides.txt");
+
+    cout << "How many rides? ";
+    cin >> rides;
+
+    for (int i = 1; i <= rides; i++)
+    {
+        cout << "Ride " << i
+             << " vehicle (B/R/C), km, promo %: ";
+        cin >> vehicle >> km >> promo;
+
+        double amount;
+
+        if (promo == 0)
+        {
+            amount = fare(km, vehicle);
+        }
+        else
+        {
+            amount = fare(km, vehicle, promo);
+        }
+
+        fout << "Ride " << i << " (" << vehicle << "), "
+             << km << " km -> Rs. " << amount << endl;
+
+        total += amount;
+    }
+
+    fout << "Total collected: Rs. " << total << endl;
+
+    fout.close();
+
+    return 0;
+}
