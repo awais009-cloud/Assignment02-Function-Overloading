@@ -1,0 +1,5 @@
+ fare(10, 40);
+ Error: <copy the exact compiler error here>
+ Reason: The compiler cannot choose between overloaded versions        because the call is ambiguous.
+ Fix 1: Use an explicit type cast for one argument, e.g. fare(10, (double)40);
+ Fix 2: Use an explicit type cast for the other argument, e.g. fare((double)10, 40);
